@@ -40,3 +40,83 @@
 .read-the-docs {
   color: #888;
 }
+
+.whole-page {
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: black;
+}
+
+h2 {
+  color: black;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 30%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.error-message {
+  color: red;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.summary-statistics {
+  margin-top: 20px;
+}
+
+.summary-statistics p {
+  margin-bottom: 10px;
+}
+
+.header-feature {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 9px;
+  
+}
+
+.header-section h1,
+.header-section h2 {
+  margin-bottom: 5px;
+}
+
+.header-section h4 {
+  margin: 5px 0;
+}
