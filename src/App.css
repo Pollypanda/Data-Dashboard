@@ -38,7 +38,7 @@
 }
 
 .read-the-docs {
-  color: #888;
+  color: whitesmoke;
 }
 
 .whole-page {
@@ -50,11 +50,11 @@
 
 h1 {
   text-align: center;
-  color: black;
+  color: whitesmoke;
 }
 
 h2 {
-  color: black;
+  color: whitesmoke;
 }
 
 input[type="text"],
@@ -65,6 +65,10 @@ input[type="number"] {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+input[type="number"] {
+margin-left: 30px;
 }
 
 .error-message {
@@ -85,7 +89,7 @@ table td {
 }
 
 tbody tr:hover {
-  background-color: #f5f5f5;
+  background-color: transparent;
 }
 
 .summary-statistics {
@@ -119,4 +123,128 @@ tbody tr:hover {
 
 .header-section h4 {
   margin: 5px 0;
+  color: whitesmoke;
+
+}
+
+nav {
+  position: fixed; 
+  top: 0; 
+  right: 0; 
+}
+
+.home-link 
+{
+  border:1px dotted white;
+  background:#1d1f1d;
+  width:75px;
+}
+
+.display {
+  color: whitesmoke;
+
+}
+
+.weather-detail {
+  color: whitesmoke;
+}
+
+.toggle-buttons {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.weather-chart-container {
+  /* background-color: rgb(179, 213, 245); */
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 500px;
+  border-radius: 6px;
+  border-color: white;
+  margin: 20px auto;
+}
+
+.moonphase-chart-container {
+  border-radius: 6px;
+  border-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  max-width: 500px;
+  width: 100%;
+  margin: 20px auto;
+}
+
+.weather-detail {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 6px;
+  width: 100%;
+  max-width: 600px;
+  color: black;
+  font-weight: bold;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+.dropdown {
+  padding: 8px 8px;
+  font-size: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);  color: #333;
+  cursor: pointer;
+  font-weight: bold;
+
+}
+
+.dropdown:hover {
+  background-color: #f2f2f2;
+}
+
+.dropdown:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.visualization-selector {
+  color: black;
+  font-style: oblique;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 200px;
+  margin: 20px auto;
+  border-radius: 6px;
+  padding: 5px;
+}
+
+.go-back-button {
+  background-color: #89f1e5;
+  border: none;
+  color: rgb(32, 88, 218);
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.go-back-button:hover {
+  background-color: #8eddda;
 }

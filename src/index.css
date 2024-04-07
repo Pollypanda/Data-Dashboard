@@ -28,7 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-image: url('/public/weather.jpg');
+  background-image: url('/public/galaxy.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 }

@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
+import WeatherChart from './Components/WeatherChart';
+import MoonPhaseChart from './Components/MoonPhaseChart';
+import SideNav from './Components/SideNav';
 import './App.css';
 
 const API_KEY = import.meta.env.VITE_APP_API_KEY;
@@ -12,6 +16,7 @@ function App() {
   const [temperatureRange, setTemperatureRange] = useState({ min: '', max: '' });
   const [errorMessage, setErrorMessage] = useState('');
   const [searchDateError, setSearchDateError] = useState('');
+  const [selectedVisualization, setSelectedVisualization] = useState('weather');
 
   useEffect(() => {
     const fetchWeatherData = async () => {
@@ -91,11 +96,16 @@ function App() {
     }
   };
 
+  // Handle visualization change
+  const handleVisualizationChange = (e) => {
+    setSelectedVisualization(e.target.value);
+  };
+
   return (
     <div className="whole-page">
       <div className="header-feature">
         <div className="header-section">
-          <h1>Atlanta, USA</h1>
+          <h1>Atlanta, Georgia</h1>
         </div>
         <div className="header-section">
           {latitude && longitude && (
@@ -112,6 +122,33 @@ function App() {
           <h4>Lowest Temp: {lowestTemperature} °F</h4>
         </div>
       </div>
+
+      {/* Visualization selector dropdown */}
+      <div className="visualization-selector">
+      <label htmlFor="visualization">Select Visualization:</label>
+      <select
+        id="visualization"
+        value={selectedVisualization}
+        onChange={handleVisualizationChange}
+        className="dropdown"
+      >
+        <option value="weather">Weather</option>
+        <option value="moonPhase">Moon Phase</option>
+      </select>
+    </div>
+      
+      {/* Weather and Moon Phase Charts */}
+      {selectedVisualization === 'weather' && (
+        <div className="weather-chart-container">
+          <WeatherChart weatherData={filteredData} />
+        </div>
+      )}
+      {selectedVisualization === 'moonPhase' && (
+        <div className='moonphase-chart-container'>
+          <MoonPhaseChart moonPhaseData={filteredData} />
+        </div>
+      )}
+
       <div>
         <h2></h2>
         <input
@@ -121,8 +158,8 @@ function App() {
           onChange={handleSearchDateChange}
         />
         {searchDateError && <p className="error-message">{searchDateError}</p>}
-      </div>
-      <div>
+     </div>
+     <div>
         <h2></h2>
         <input
           type="number"
@@ -139,7 +176,7 @@ function App() {
       </div>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
       {filteredData && filteredData.length > 0 ? (
-        <div>
+        <div className="display">
           <table>
             <thead>
               <tr>
@@ -147,6 +184,7 @@ function App() {
                 <th>Temperature</th>
                 <th>Moonrise</th>
                 <th>MoonSet</th>
+                <th>Details</th>
               </tr>
             </thead>
             <tbody>
@@ -156,16 +194,22 @@ function App() {
                   <td>{convertToFahrenheit(day.temp)} °F</td>
                   <td>{new Date(day.moonrise_ts * 1000).toLocaleTimeString()}</td>
                   <td>{new Date(day.moonset_ts * 1000).toLocaleTimeString()}</td>
+                  <td className="detail">
+                    {/* Link to detail view */}
+                    <Link to={`/detail/${day.valid_date}`}>🔗</Link>
+                  </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
       ) : (
-        <p>No matching data found.</p>
-      )}
+         <p>No matching data found.</p>
+       )}
     </div>
   );
-}
+  
+ }
 
-export default App;
+ export default App;
+
