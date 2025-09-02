@@ -1,28 +1,18 @@
-# Web Development Project 6 - *Data Dashboard Part 2*
+#*Data Dashboard*
 
 Submitted by: **Ploynapas Pawachot**
 
-This web app: **This app displays the weather in Atlanta using React Router, Link, and usePArams()**
-
-Time spent: **14** hours spent in total
+This web app: **This app displays the weather in Atlanta using React Router, Link, and useParams()**
 
 ## Required Features
 
-The following **required** functionality is completed:
+The following functionality is completed:
 
 - [X] **The app includes at least one unique chart developed using the fetched data that tell an interesting story**
 - [X] **Clicking on an item in the list view displays more details about it**
 - [X] **Clicking on an item has a direct, unique link to that item's detail view page**
-
-
-The following **optional** features are implemented:
-
-- [ ] The site's customized dashboard contains more content that explains what is interesting about the data
-- [X] The site allows users to toggle between different data visualizations
-
-The following **additional** features are implemented:
-
-* [X] The site has "Go Back" button to allow users to go back to the home page.
+- [X] **The site allows users to toggle between different data visualizations**
+- [X] **The site has "Go Back" button to allow users to go back to the home page**
 
 ## Video Walkthrough
 
