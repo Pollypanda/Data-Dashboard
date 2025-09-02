@@ -1,6 +1,6 @@
 ## Data Dashboard
 
-Submitted by: **Ploynapas Pawachot**
+Developer: **Ploynapas Pawachot**
 
 This web app: **This app displays the weather in Atlanta using React Router, Link, and useParams()**
 
